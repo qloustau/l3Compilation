@@ -22,6 +22,8 @@
 
 import java.io.*;
 
+import javax.rmi.CORBA.Util;
+
 // classe de mise en oeuvre du compilateur
 // =======================================
 // (verifications semantiques + production du code objet)
@@ -102,7 +104,7 @@ public class PtGen {
      
     // autres variables fournies
     // -------------------------
-    public static String trinome="XxxYyyZzz"; // MERCI de renseigner ici un nom pour le trinome, constitue de exclusivement de lettres
+    public static String trinome="Thomas Foucault, Alexandre Moriniaux, Nathanaël Touchard"; // MERCI de renseigner ici un nom pour le trinome, constitue de exclusivement de lettres
     
     private static int tCour; // type de l'expression compilee
     private static int vCour; // valeur de l'expression compilee le cas echeant
@@ -192,9 +194,25 @@ public class PtGen {
 		case 0:
 			initialisations();
 			break;
-
-		// A COMPLETER
-		
+		case 1: //add const
+			placeIdent(UtilLex.numId, CONSTANTE, tCour, vCour);
+			break;
+		case 2: //val nbentier pos
+			tCour = ENT;
+			vCour = UtilLex.valNb;
+			break;
+		case 3: //val nbentier neg
+			tCour = ENT;
+			vCour = - UtilLex.valNb;
+			break;
+		case 4: //val vrai
+			tCour = BOOL;
+			vCour = VRAI;
+			break;
+		case 5: //val faux
+			tCour = BOOL;
+			vCour = FAUX;
+			break;
 		default:
 			System.out
 					.println("Point de generation non prevu dans votre liste");
