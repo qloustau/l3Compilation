@@ -10,14 +10,19 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>.link0</name>
+			<type>2</type>
+			<location>H:/Documents/COMPL/Projet/libclass</location>
+		</link>
+		<link>
 			<name>.link1</name>
 			<type>2</type>
-			<location>H:/TRAVAIL/comp/l3Compilation/libclass</location>
+			<location>H:/Documents/COMPL/Projet/PropjetP/libclass/libclass</location>
 		</link>
 		<link>
 			<name>.link2</name>
 			<type>2</type>
-			<location>H:/Documents/COMPL/Projet/libclass</location>
+			<location>H:/Documents/COMPL/Projet/PropjetP/libclass</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -1,17 +1,19 @@
 import java.io.*;
 
-// classe permettant de passer d'un code objet au fichier en code mnémonique
+// classe permettant de passer d'un code objet au fichier en code mnemonique
 public class Mnemo {
 
-	public static final String[] inst = { "", "réserver  ", "empiler   ",
+	// suite des mnemoniques des codes MAPILE (dans l'ordre croissant des codes)
+	public static final String[] inst = { "", "reserver  ", "empiler   ",
 			"contenug  ", "affecterg ", "ou        ", "et        ",
 			"non       ", "inf       ", "infeg     ", "sup       ",
 			"supeg     ", "eg        ", "diff      ", "add       ",
 			"sous      ", "mul       ", "div       ", "bsifaux   ",
 			"bincond   ", "lirent    ", "lirebool  ", "ecrent    ",
-			"ecrbool   ", "arrêt     ", "empileradg", "empileradl",
+			"ecrbool   ", "arret     ", "empileradg", "empileradl",
 			"contenul  ", "affecterl ", "appel     ", "retour    " };
 
+	// suite du nombre d'arguments des codes MAPILE
 	public static final int[] nbp = { 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 			0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 1 };
 
@@ -31,7 +33,7 @@ public class Mnemo {
 				Ecriture.ecrireStringln(f, " code instruction incorrect : "
 						+ code);
 				Ecriture.fermer(f);
-				System.out.println("code mal généré, consultez le fichier "
+				System.out.println("code mal genere, consultez le fichier "
 						+ nomComplet);
 				System.exit(1);
 			}
