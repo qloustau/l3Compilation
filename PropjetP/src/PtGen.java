@@ -235,10 +235,38 @@ public class PtGen {
 			afftabSymb();
 			break;
 		case 10: //reserver var
-			po.produire(1); //reserver
+			po.produire(RESERVER); //reserver
 			po.produire(nbVarAReserver);
 			nbVarAReserver = 0;
 			po.constGen();
+			break;
+		case 13: //primaire valeur
+			po.produire(EMPILER); //empiler val
+			po.produire(UtilLex.valNb); //valeur
+			break;
+		case 14: //primaire ident
+			int ident = presentIdent(1);
+			if(ident != 0) {
+				switch(tabSymb[ident].categorie) {
+					case CONSTANTE:
+						po.produire(EMPILER); // empiler
+						break;
+					case VARGLOBALE:
+						po.produire(CONTENUG); //contenug
+						break;
+					default: break;
+				}
+				po.produire(tabSymb[ident].info);
+			}
+			break;
+		case 17: //mul
+			po.produire(MUL);
+			break;
+		case 18: //div
+			po.produire(DIV);
+			break;
+		case 27: // non
+			po.produire(NON);
 			break;
 		default:
 			System.out

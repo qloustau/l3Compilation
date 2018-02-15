@@ -143,40 +143,40 @@ effixes : '(' (expression  (',' expression  )*)? ')'
 effmods :'(' (ident  (',' ident  )*)? ')'
   ; 
   
-expression: (exp1) ('ou'  exp1  )*
+expression: (exp1) ('ou' {PtGen.pt(16);} exp1 {PtGen.pt(16);} {PtGen.pt(29);} )*
   ;
   
-exp1  : exp2 ('et'  exp2  )*
+exp1  : exp2 ('et' {PtGen.pt(16);} exp2 {PtGen.pt(16);} {PtGen.pt(28); )*
   ;
   
-exp2  : 'non' exp2 
+exp2  : 'non' exp2 {PtGen.pt(16);} {PtGen.pt(27);}
   | exp3  
   ;
   
 exp3  : exp4 
-  ( '='   exp4 
-  | '<>'  exp4 
-  | '>'   exp4 
-  | '>='  exp4 
-  | '<'   exp4 
-  | '<='  exp4  
+  ( '=' {PtGen.pt(15);}  exp4 {PtGen.pt(15);} {PtGen.pt(21);}
+  | '<>' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(22);}
+  | '>'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(23);}
+  | '>=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(24);}
+  | '<'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(25);}
+  | '<=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(26);}
   ) ?
   ;
   
 exp4  : exp5 
-        ('+'  exp5 
-        |'-'  exp5 
+        ('+' {PtGen.pt(15);} exp5 {PtGen.pt(15);} {PtGen.pt(19);}
+        |'-' {PtGen.pt(15);} exp5 {PtGen.pt(15);} {PtGen.pt(20);}
         )*
   ;
   
 exp5  : primaire 
-        (    '*'   primaire 
-          | 'div'  primaire 
+        (    '*' {PtGen.pt(15);}  primaire {PtGen.pt(15);} {PtGen.pt(17);}
+          | 'div' {PtGen.pt(15);} primaire {PtGen.pt(15);} {PtGen.pt(18);}
         )*
   ;
   
-primaire: valeur 
-  | ident  
+primaire: valeur {PtGen.pt(13);}
+  | ident {PtGen.pt(14);}
   | '(' expression ')'
   ;
   
