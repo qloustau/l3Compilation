@@ -108,6 +108,8 @@ public class PtGen {
     
     private static int tCour; // type de l'expression compilee
     private static int vCour; // valeur de l'expression compilee le cas echeant
+    
+    private static int varGlbIt; //iterateur pour remplir tabSymb avec les var globales
   
    
     // D�finition de la table des symboles
@@ -137,6 +139,9 @@ public class PtGen {
 			UtilLex.messErr("debordement de la table des symboles");
 		it = it + 1;
 		tabSymb[it] = new EltTabSymb(c, cat, t, v);
+		if(cat == VARGLOBALE) {
+			varGlbIt++;
+		}
 	}
 
 	// utilitaire d'affichage de la table des symboles
@@ -183,6 +188,8 @@ public class PtGen {
 	
 		// initialisation du type de l'expression courante
 		tCour = NEUTRE;
+		
+		varGlbIt = 0;
 
 	} // initialisations
 
@@ -213,6 +220,16 @@ public class PtGen {
 		case 5: //val faux
 			tCour = BOOL;
 			vCour = FAUX;
+			break;
+		case 6: //type ENT
+			tCour = ENT;
+			break;
+		case 7: //type BOOL
+			tCour = BOOL;
+			break;
+		case 8: //decl var
+			placeIdent(UtilLex.numId, VARGLOBALE, tCour, varGlbIt);
+			afftabSymb();
 			break;
 		default:
 			System.out
