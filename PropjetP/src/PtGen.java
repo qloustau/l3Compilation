@@ -110,6 +110,7 @@ public class PtGen {
     private static int vCour; // valeur de l'expression compilee le cas echeant
     
     private static int varGlbIt; //iterateur pour remplir tabSymb avec les var globales
+    private static int nbVarAReserver; //nombre de var à réserver lors d'une déclaration
   
    
     // Dï¿½finition de la table des symboles
@@ -190,6 +191,7 @@ public class PtGen {
 		tCour = NEUTRE;
 		
 		varGlbIt = 0;
+		nbVarAReserver = 0;
 
 	} // initialisations
 
@@ -229,7 +231,14 @@ public class PtGen {
 			break;
 		case 8: //decl var
 			placeIdent(UtilLex.numId, VARGLOBALE, tCour, varGlbIt);
+			nbVarAReserver++;
 			afftabSymb();
+			break;
+		case 10: //reserver var
+			po.produire(1); //reserver
+			po.produire(nbVarAReserver);
+			nbVarAReserver = 0;
+			po.constGen();
 			break;
 		default:
 			System.out
