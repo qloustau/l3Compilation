@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 projet.g 2018-02-15 08:26:27
+// $ANTLR 3.5.2 ../src/projet.g 2018-02-15 08:25:57
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -73,15 +73,15 @@ public class projetLexer extends Lexer {
 	public projetLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "projet.g"; }
+	@Override public String getGrammarFileName() { return "../src/projet.g"; }
 
 	// $ANTLR start "T__9"
 	public final void mT__9() throws RecognitionException {
 		try {
 			int _type = T__9;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:7:6: ( '(' )
-			// projet.g:7:8: '('
+			// ../src/projet.g:7:6: ( '(' )
+			// ../src/projet.g:7:8: '('
 			{
 			match('('); 
 			}
@@ -100,8 +100,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__10;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:8:7: ( ')' )
-			// projet.g:8:9: ')'
+			// ../src/projet.g:8:7: ( ')' )
+			// ../src/projet.g:8:9: ')'
 			{
 			match(')'); 
 			}
@@ -120,8 +120,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__11;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:9:7: ( '*' )
-			// projet.g:9:9: '*'
+			// ../src/projet.g:9:7: ( '*' )
+			// ../src/projet.g:9:9: '*'
 			{
 			match('*'); 
 			}
@@ -140,8 +140,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__12;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:10:7: ( '+' )
-			// projet.g:10:9: '+'
+			// ../src/projet.g:10:7: ( '+' )
+			// ../src/projet.g:10:9: '+'
 			{
 			match('+'); 
 			}
@@ -160,8 +160,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__13;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:11:7: ( ',' )
-			// projet.g:11:9: ','
+			// ../src/projet.g:11:7: ( ',' )
+			// ../src/projet.g:11:9: ','
 			{
 			match(','); 
 			}
@@ -180,8 +180,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__14;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:12:7: ( '-' )
-			// projet.g:12:9: '-'
+			// ../src/projet.g:12:7: ( '-' )
+			// ../src/projet.g:12:9: '-'
 			{
 			match('-'); 
 			}
@@ -200,8 +200,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__15;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:13:7: ( ':' )
-			// projet.g:13:9: ':'
+			// ../src/projet.g:13:7: ( ':' )
+			// ../src/projet.g:13:9: ':'
 			{
 			match(':'); 
 			}
@@ -220,8 +220,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__16;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:14:7: ( ':=' )
-			// projet.g:14:9: ':='
+			// ../src/projet.g:14:7: ( ':=' )
+			// ../src/projet.g:14:9: ':='
 			{
 			match(":="); 
 
@@ -241,8 +241,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:15:7: ( ';' )
-			// projet.g:15:9: ';'
+			// ../src/projet.g:15:7: ( ';' )
+			// ../src/projet.g:15:9: ';'
 			{
 			match(';'); 
 			}
@@ -261,8 +261,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:16:7: ( '<' )
-			// projet.g:16:9: '<'
+			// ../src/projet.g:16:7: ( '<' )
+			// ../src/projet.g:16:9: '<'
 			{
 			match('<'); 
 			}
@@ -281,8 +281,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:17:7: ( '<=' )
-			// projet.g:17:9: '<='
+			// ../src/projet.g:17:7: ( '<=' )
+			// ../src/projet.g:17:9: '<='
 			{
 			match("<="); 
 
@@ -302,8 +302,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:18:7: ( '<>' )
-			// projet.g:18:9: '<>'
+			// ../src/projet.g:18:7: ( '<>' )
+			// ../src/projet.g:18:9: '<>'
 			{
 			match("<>"); 
 
@@ -323,8 +323,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__21;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:19:7: ( '=' )
-			// projet.g:19:9: '='
+			// ../src/projet.g:19:7: ( '=' )
+			// ../src/projet.g:19:9: '='
 			{
 			match('='); 
 			}
@@ -343,8 +343,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__22;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:20:7: ( '>' )
-			// projet.g:20:9: '>'
+			// ../src/projet.g:20:7: ( '>' )
+			// ../src/projet.g:20:9: '>'
 			{
 			match('>'); 
 			}
@@ -363,8 +363,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__23;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:21:7: ( '>=' )
-			// projet.g:21:9: '>='
+			// ../src/projet.g:21:7: ( '>=' )
+			// ../src/projet.g:21:9: '>='
 			{
 			match(">="); 
 
@@ -384,8 +384,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__24;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:22:7: ( 'alors' )
-			// projet.g:22:9: 'alors'
+			// ../src/projet.g:22:7: ( 'alors' )
+			// ../src/projet.g:22:9: 'alors'
 			{
 			match("alors"); 
 
@@ -405,8 +405,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:23:7: ( 'aut' )
-			// projet.g:23:9: 'aut'
+			// ../src/projet.g:23:7: ( 'aut' )
+			// ../src/projet.g:23:9: 'aut'
 			{
 			match("aut"); 
 
@@ -426,8 +426,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:24:7: ( 'bool' )
-			// projet.g:24:9: 'bool'
+			// ../src/projet.g:24:7: ( 'bool' )
+			// ../src/projet.g:24:9: 'bool'
 			{
 			match("bool"); 
 
@@ -447,8 +447,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:25:7: ( 'cond' )
-			// projet.g:25:9: 'cond'
+			// ../src/projet.g:25:7: ( 'cond' )
+			// ../src/projet.g:25:9: 'cond'
 			{
 			match("cond"); 
 
@@ -468,8 +468,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:26:7: ( 'const' )
-			// projet.g:26:9: 'const'
+			// ../src/projet.g:26:7: ( 'const' )
+			// ../src/projet.g:26:9: 'const'
 			{
 			match("const"); 
 
@@ -489,8 +489,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:27:7: ( 'debut' )
-			// projet.g:27:9: 'debut'
+			// ../src/projet.g:27:7: ( 'debut' )
+			// ../src/projet.g:27:9: 'debut'
 			{
 			match("debut"); 
 
@@ -510,8 +510,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:28:7: ( 'def' )
-			// projet.g:28:9: 'def'
+			// ../src/projet.g:28:7: ( 'def' )
+			// ../src/projet.g:28:9: 'def'
 			{
 			match("def"); 
 
@@ -531,8 +531,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:29:7: ( 'div' )
-			// projet.g:29:9: 'div'
+			// ../src/projet.g:29:7: ( 'div' )
+			// ../src/projet.g:29:9: 'div'
 			{
 			match("div"); 
 
@@ -552,8 +552,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:30:7: ( 'ecrire' )
-			// projet.g:30:9: 'ecrire'
+			// ../src/projet.g:30:7: ( 'ecrire' )
+			// ../src/projet.g:30:9: 'ecrire'
 			{
 			match("ecrire"); 
 
@@ -573,8 +573,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:31:7: ( 'ent' )
-			// projet.g:31:9: 'ent'
+			// ../src/projet.g:31:7: ( 'ent' )
+			// ../src/projet.g:31:9: 'ent'
 			{
 			match("ent"); 
 
@@ -594,8 +594,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:32:7: ( 'et' )
-			// projet.g:32:9: 'et'
+			// ../src/projet.g:32:7: ( 'et' )
+			// ../src/projet.g:32:9: 'et'
 			{
 			match("et"); 
 
@@ -615,8 +615,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__35;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:33:7: ( 'faire' )
-			// projet.g:33:9: 'faire'
+			// ../src/projet.g:33:7: ( 'faire' )
+			// ../src/projet.g:33:9: 'faire'
 			{
 			match("faire"); 
 
@@ -636,8 +636,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__36;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:34:7: ( 'fait' )
-			// projet.g:34:9: 'fait'
+			// ../src/projet.g:34:7: ( 'fait' )
+			// ../src/projet.g:34:9: 'fait'
 			{
 			match("fait"); 
 
@@ -657,8 +657,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__37;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:35:7: ( 'faux' )
-			// projet.g:35:9: 'faux'
+			// ../src/projet.g:35:7: ( 'faux' )
+			// ../src/projet.g:35:9: 'faux'
 			{
 			match("faux"); 
 
@@ -678,8 +678,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__38;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:36:7: ( 'fcond' )
-			// projet.g:36:9: 'fcond'
+			// ../src/projet.g:36:7: ( 'fcond' )
+			// ../src/projet.g:36:9: 'fcond'
 			{
 			match("fcond"); 
 
@@ -699,8 +699,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__39;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:37:7: ( 'fin' )
-			// projet.g:37:9: 'fin'
+			// ../src/projet.g:37:7: ( 'fin' )
+			// ../src/projet.g:37:9: 'fin'
 			{
 			match("fin"); 
 
@@ -720,8 +720,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__40;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:38:7: ( 'fixe' )
-			// projet.g:38:9: 'fixe'
+			// ../src/projet.g:38:7: ( 'fixe' )
+			// ../src/projet.g:38:9: 'fixe'
 			{
 			match("fixe"); 
 
@@ -741,8 +741,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__41;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:39:7: ( 'fsi' )
-			// projet.g:39:9: 'fsi'
+			// ../src/projet.g:39:7: ( 'fsi' )
+			// ../src/projet.g:39:9: 'fsi'
 			{
 			match("fsi"); 
 
@@ -762,8 +762,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__42;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:40:7: ( 'lire' )
-			// projet.g:40:9: 'lire'
+			// ../src/projet.g:40:7: ( 'lire' )
+			// ../src/projet.g:40:9: 'lire'
 			{
 			match("lire"); 
 
@@ -783,8 +783,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__43;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:41:7: ( 'mod' )
-			// projet.g:41:9: 'mod'
+			// ../src/projet.g:41:7: ( 'mod' )
+			// ../src/projet.g:41:9: 'mod'
 			{
 			match("mod"); 
 
@@ -804,8 +804,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__44;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:42:7: ( 'module' )
-			// projet.g:42:9: 'module'
+			// ../src/projet.g:42:7: ( 'module' )
+			// ../src/projet.g:42:9: 'module'
 			{
 			match("module"); 
 
@@ -825,8 +825,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__45;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:43:7: ( 'non' )
-			// projet.g:43:9: 'non'
+			// ../src/projet.g:43:7: ( 'non' )
+			// ../src/projet.g:43:9: 'non'
 			{
 			match("non"); 
 
@@ -846,8 +846,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__46;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:44:7: ( 'ou' )
-			// projet.g:44:9: 'ou'
+			// ../src/projet.g:44:7: ( 'ou' )
+			// ../src/projet.g:44:9: 'ou'
 			{
 			match("ou"); 
 
@@ -867,8 +867,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__47;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:45:7: ( 'proc' )
-			// projet.g:45:9: 'proc'
+			// ../src/projet.g:45:7: ( 'proc' )
+			// ../src/projet.g:45:9: 'proc'
 			{
 			match("proc"); 
 
@@ -888,8 +888,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__48;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:46:7: ( 'programme' )
-			// projet.g:46:9: 'programme'
+			// ../src/projet.g:46:7: ( 'programme' )
+			// ../src/projet.g:46:9: 'programme'
 			{
 			match("programme"); 
 
@@ -909,8 +909,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__49;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:47:7: ( 'ref' )
-			// projet.g:47:9: 'ref'
+			// ../src/projet.g:47:7: ( 'ref' )
+			// ../src/projet.g:47:9: 'ref'
 			{
 			match("ref"); 
 
@@ -930,8 +930,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__50;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:48:7: ( 'si' )
-			// projet.g:48:9: 'si'
+			// ../src/projet.g:48:7: ( 'si' )
+			// ../src/projet.g:48:9: 'si'
 			{
 			match("si"); 
 
@@ -951,8 +951,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__51;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:49:7: ( 'sinon' )
-			// projet.g:49:9: 'sinon'
+			// ../src/projet.g:49:7: ( 'sinon' )
+			// ../src/projet.g:49:9: 'sinon'
 			{
 			match("sinon"); 
 
@@ -972,8 +972,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__52;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:50:7: ( 'ttq' )
-			// projet.g:50:9: 'ttq'
+			// ../src/projet.g:50:7: ( 'ttq' )
+			// ../src/projet.g:50:9: 'ttq'
 			{
 			match("ttq"); 
 
@@ -993,8 +993,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__53;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:51:7: ( 'var' )
-			// projet.g:51:9: 'var'
+			// ../src/projet.g:51:7: ( 'var' )
+			// ../src/projet.g:51:9: 'var'
 			{
 			match("var"); 
 
@@ -1014,8 +1014,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = T__54;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:52:7: ( 'vrai' )
-			// projet.g:52:9: 'vrai'
+			// ../src/projet.g:52:7: ( 'vrai' )
+			// ../src/projet.g:52:9: 'vrai'
 			{
 			match("vrai"); 
 
@@ -1035,8 +1035,8 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:204:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// projet.g:204:9: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// ../src/projet.g:204:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// ../src/projet.g:204:9: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -1046,7 +1046,7 @@ public class projetLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// projet.g:204:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// ../src/projet.g:204:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -1057,7 +1057,7 @@ public class projetLexer extends Lexer {
 
 				switch (alt1) {
 				case 1 :
-					// projet.g:
+					// ../src/projet.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -1091,10 +1091,10 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:208:5: ( ( '0' .. '9' )+ )
-			// projet.g:208:9: ( '0' .. '9' )+
+			// ../src/projet.g:208:5: ( ( '0' .. '9' )+ )
+			// ../src/projet.g:208:9: ( '0' .. '9' )+
 			{
-			// projet.g:208:9: ( '0' .. '9' )+
+			// ../src/projet.g:208:9: ( '0' .. '9' )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -1106,7 +1106,7 @@ public class projetLexer extends Lexer {
 
 				switch (alt2) {
 				case 1 :
-					// projet.g:
+					// ../src/projet.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -1143,10 +1143,10 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:209:5: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-			// projet.g:209:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
+			// ../src/projet.g:209:5: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+			// ../src/projet.g:209:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
 			{
-			// projet.g:209:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
+			// ../src/projet.g:209:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
 			int cnt3=0;
 			loop3:
 			while (true) {
@@ -1158,7 +1158,7 @@ public class projetLexer extends Lexer {
 
 				switch (alt3) {
 				case 1 :
-					// projet.g:
+					// ../src/projet.g:
 					{
 					if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 						input.consume();
@@ -1196,7 +1196,7 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:213:3: ( '\\{' ( . )* '\\}' | '#' (~ ( '\\r' | '\\n' ) )* )
+			// ../src/projet.g:213:3: ( '\\{' ( . )* '\\}' | '#' (~ ( '\\r' | '\\n' ) )* )
 			int alt6=2;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0=='{') ) {
@@ -1214,10 +1214,10 @@ public class projetLexer extends Lexer {
 
 			switch (alt6) {
 				case 1 :
-					// projet.g:213:6: '\\{' ( . )* '\\}'
+					// ../src/projet.g:213:6: '\\{' ( . )* '\\}'
 					{
 					match('{'); 
-					// projet.g:213:11: ( . )*
+					// ../src/projet.g:213:11: ( . )*
 					loop4:
 					while (true) {
 						int alt4=2;
@@ -1231,7 +1231,7 @@ public class projetLexer extends Lexer {
 
 						switch (alt4) {
 						case 1 :
-							// projet.g:213:12: .
+							// ../src/projet.g:213:12: .
 							{
 							matchAny(); 
 							}
@@ -1247,10 +1247,10 @@ public class projetLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// projet.g:214:6: '#' (~ ( '\\r' | '\\n' ) )*
+					// ../src/projet.g:214:6: '#' (~ ( '\\r' | '\\n' ) )*
 					{
 					match('#'); 
-					// projet.g:214:10: (~ ( '\\r' | '\\n' ) )*
+					// ../src/projet.g:214:10: (~ ( '\\r' | '\\n' ) )*
 					loop5:
 					while (true) {
 						int alt5=2;
@@ -1261,7 +1261,7 @@ public class projetLexer extends Lexer {
 
 						switch (alt5) {
 						case 1 :
-							// projet.g:
+							// ../src/projet.g:
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -1298,12 +1298,12 @@ public class projetLexer extends Lexer {
 		try {
 			int _type = ML_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// projet.g:218:15: ( '/*' ( options {greedy=false; } : . )* '*/' )
-			// projet.g:218:19: '/*' ( options {greedy=false; } : . )* '*/'
+			// ../src/projet.g:218:15: ( '/*' ( options {greedy=false; } : . )* '*/' )
+			// ../src/projet.g:218:19: '/*' ( options {greedy=false; } : . )* '*/'
 			{
 			match("/*"); 
 
-			// projet.g:218:24: ( options {greedy=false; } : . )*
+			// ../src/projet.g:218:24: ( options {greedy=false; } : . )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -1324,7 +1324,7 @@ public class projetLexer extends Lexer {
 
 				switch (alt7) {
 				case 1 :
-					// projet.g:218:51: .
+					// ../src/projet.g:218:51: .
 					{
 					matchAny(); 
 					}
@@ -1351,362 +1351,362 @@ public class projetLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// projet.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | ID | INT | WS | COMMENT | ML_COMMENT )
+		// ../src/projet.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | ID | INT | WS | COMMENT | ML_COMMENT )
 		int alt8=51;
 		alt8 = dfa8.predict(input);
 		switch (alt8) {
 			case 1 :
-				// projet.g:1:10: T__9
+				// ../src/projet.g:1:10: T__9
 				{
 				mT__9(); 
 
 				}
 				break;
 			case 2 :
-				// projet.g:1:15: T__10
+				// ../src/projet.g:1:15: T__10
 				{
 				mT__10(); 
 
 				}
 				break;
 			case 3 :
-				// projet.g:1:21: T__11
+				// ../src/projet.g:1:21: T__11
 				{
 				mT__11(); 
 
 				}
 				break;
 			case 4 :
-				// projet.g:1:27: T__12
+				// ../src/projet.g:1:27: T__12
 				{
 				mT__12(); 
 
 				}
 				break;
 			case 5 :
-				// projet.g:1:33: T__13
+				// ../src/projet.g:1:33: T__13
 				{
 				mT__13(); 
 
 				}
 				break;
 			case 6 :
-				// projet.g:1:39: T__14
+				// ../src/projet.g:1:39: T__14
 				{
 				mT__14(); 
 
 				}
 				break;
 			case 7 :
-				// projet.g:1:45: T__15
+				// ../src/projet.g:1:45: T__15
 				{
 				mT__15(); 
 
 				}
 				break;
 			case 8 :
-				// projet.g:1:51: T__16
+				// ../src/projet.g:1:51: T__16
 				{
 				mT__16(); 
 
 				}
 				break;
 			case 9 :
-				// projet.g:1:57: T__17
+				// ../src/projet.g:1:57: T__17
 				{
 				mT__17(); 
 
 				}
 				break;
 			case 10 :
-				// projet.g:1:63: T__18
+				// ../src/projet.g:1:63: T__18
 				{
 				mT__18(); 
 
 				}
 				break;
 			case 11 :
-				// projet.g:1:69: T__19
+				// ../src/projet.g:1:69: T__19
 				{
 				mT__19(); 
 
 				}
 				break;
 			case 12 :
-				// projet.g:1:75: T__20
+				// ../src/projet.g:1:75: T__20
 				{
 				mT__20(); 
 
 				}
 				break;
 			case 13 :
-				// projet.g:1:81: T__21
+				// ../src/projet.g:1:81: T__21
 				{
 				mT__21(); 
 
 				}
 				break;
 			case 14 :
-				// projet.g:1:87: T__22
+				// ../src/projet.g:1:87: T__22
 				{
 				mT__22(); 
 
 				}
 				break;
 			case 15 :
-				// projet.g:1:93: T__23
+				// ../src/projet.g:1:93: T__23
 				{
 				mT__23(); 
 
 				}
 				break;
 			case 16 :
-				// projet.g:1:99: T__24
+				// ../src/projet.g:1:99: T__24
 				{
 				mT__24(); 
 
 				}
 				break;
 			case 17 :
-				// projet.g:1:105: T__25
+				// ../src/projet.g:1:105: T__25
 				{
 				mT__25(); 
 
 				}
 				break;
 			case 18 :
-				// projet.g:1:111: T__26
+				// ../src/projet.g:1:111: T__26
 				{
 				mT__26(); 
 
 				}
 				break;
 			case 19 :
-				// projet.g:1:117: T__27
+				// ../src/projet.g:1:117: T__27
 				{
 				mT__27(); 
 
 				}
 				break;
 			case 20 :
-				// projet.g:1:123: T__28
+				// ../src/projet.g:1:123: T__28
 				{
 				mT__28(); 
 
 				}
 				break;
 			case 21 :
-				// projet.g:1:129: T__29
+				// ../src/projet.g:1:129: T__29
 				{
 				mT__29(); 
 
 				}
 				break;
 			case 22 :
-				// projet.g:1:135: T__30
+				// ../src/projet.g:1:135: T__30
 				{
 				mT__30(); 
 
 				}
 				break;
 			case 23 :
-				// projet.g:1:141: T__31
+				// ../src/projet.g:1:141: T__31
 				{
 				mT__31(); 
 
 				}
 				break;
 			case 24 :
-				// projet.g:1:147: T__32
+				// ../src/projet.g:1:147: T__32
 				{
 				mT__32(); 
 
 				}
 				break;
 			case 25 :
-				// projet.g:1:153: T__33
+				// ../src/projet.g:1:153: T__33
 				{
 				mT__33(); 
 
 				}
 				break;
 			case 26 :
-				// projet.g:1:159: T__34
+				// ../src/projet.g:1:159: T__34
 				{
 				mT__34(); 
 
 				}
 				break;
 			case 27 :
-				// projet.g:1:165: T__35
+				// ../src/projet.g:1:165: T__35
 				{
 				mT__35(); 
 
 				}
 				break;
 			case 28 :
-				// projet.g:1:171: T__36
+				// ../src/projet.g:1:171: T__36
 				{
 				mT__36(); 
 
 				}
 				break;
 			case 29 :
-				// projet.g:1:177: T__37
+				// ../src/projet.g:1:177: T__37
 				{
 				mT__37(); 
 
 				}
 				break;
 			case 30 :
-				// projet.g:1:183: T__38
+				// ../src/projet.g:1:183: T__38
 				{
 				mT__38(); 
 
 				}
 				break;
 			case 31 :
-				// projet.g:1:189: T__39
+				// ../src/projet.g:1:189: T__39
 				{
 				mT__39(); 
 
 				}
 				break;
 			case 32 :
-				// projet.g:1:195: T__40
+				// ../src/projet.g:1:195: T__40
 				{
 				mT__40(); 
 
 				}
 				break;
 			case 33 :
-				// projet.g:1:201: T__41
+				// ../src/projet.g:1:201: T__41
 				{
 				mT__41(); 
 
 				}
 				break;
 			case 34 :
-				// projet.g:1:207: T__42
+				// ../src/projet.g:1:207: T__42
 				{
 				mT__42(); 
 
 				}
 				break;
 			case 35 :
-				// projet.g:1:213: T__43
+				// ../src/projet.g:1:213: T__43
 				{
 				mT__43(); 
 
 				}
 				break;
 			case 36 :
-				// projet.g:1:219: T__44
+				// ../src/projet.g:1:219: T__44
 				{
 				mT__44(); 
 
 				}
 				break;
 			case 37 :
-				// projet.g:1:225: T__45
+				// ../src/projet.g:1:225: T__45
 				{
 				mT__45(); 
 
 				}
 				break;
 			case 38 :
-				// projet.g:1:231: T__46
+				// ../src/projet.g:1:231: T__46
 				{
 				mT__46(); 
 
 				}
 				break;
 			case 39 :
-				// projet.g:1:237: T__47
+				// ../src/projet.g:1:237: T__47
 				{
 				mT__47(); 
 
 				}
 				break;
 			case 40 :
-				// projet.g:1:243: T__48
+				// ../src/projet.g:1:243: T__48
 				{
 				mT__48(); 
 
 				}
 				break;
 			case 41 :
-				// projet.g:1:249: T__49
+				// ../src/projet.g:1:249: T__49
 				{
 				mT__49(); 
 
 				}
 				break;
 			case 42 :
-				// projet.g:1:255: T__50
+				// ../src/projet.g:1:255: T__50
 				{
 				mT__50(); 
 
 				}
 				break;
 			case 43 :
-				// projet.g:1:261: T__51
+				// ../src/projet.g:1:261: T__51
 				{
 				mT__51(); 
 
 				}
 				break;
 			case 44 :
-				// projet.g:1:267: T__52
+				// ../src/projet.g:1:267: T__52
 				{
 				mT__52(); 
 
 				}
 				break;
 			case 45 :
-				// projet.g:1:273: T__53
+				// ../src/projet.g:1:273: T__53
 				{
 				mT__53(); 
 
 				}
 				break;
 			case 46 :
-				// projet.g:1:279: T__54
+				// ../src/projet.g:1:279: T__54
 				{
 				mT__54(); 
 
 				}
 				break;
 			case 47 :
-				// projet.g:1:285: ID
+				// ../src/projet.g:1:285: ID
 				{
 				mID(); 
 
 				}
 				break;
 			case 48 :
-				// projet.g:1:288: INT
+				// ../src/projet.g:1:288: INT
 				{
 				mINT(); 
 
 				}
 				break;
 			case 49 :
-				// projet.g:1:292: WS
+				// ../src/projet.g:1:292: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 50 :
-				// projet.g:1:295: COMMENT
+				// ../src/projet.g:1:295: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
 			case 51 :
-				// projet.g:1:303: ML_COMMENT
+				// ../src/projet.g:1:303: ML_COMMENT
 				{
 				mML_COMMENT(); 
 

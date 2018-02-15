@@ -179,7 +179,7 @@ public class PtGen {
 		desc = new Descripteur();
 		
 		// initialisation necessaire aux attributs lexicaux (quand enchainement de compilations)
-		//UtilLex.initialisation();
+		UtilLex.initialisation();
 	
 		// initialisation du type de l'expression courante
 		tCour = NEUTRE;
@@ -196,6 +196,7 @@ public class PtGen {
 			break;
 		case 1: //add const
 			placeIdent(UtilLex.numId, CONSTANTE, tCour, vCour);
+			afftabSymb();
 			break;
 		case 2: //val nbentier pos
 			tCour = ENT;
