@@ -198,14 +198,14 @@ public class PtGen {
 	// code des points de generation A COMPLETER
 	// -----------------------------------------
 	public static void pt(int numGen) {
-	
+	System.out.println("PTGEN " + numGen);
 		switch (numGen) {
 		case 0:
 			initialisations();
 			break;
 		case 1: //add const
 			placeIdent(UtilLex.numId, CONSTANTE, tCour, vCour);
-			afftabSymb();
+			//afftabSymb();
 			break;
 		case 2: //val nbentier pos
 			tCour = ENT;
@@ -232,7 +232,7 @@ public class PtGen {
 		case 8: //decl var
 			placeIdent(UtilLex.numId, VARGLOBALE, tCour, varGlbIt);
 			nbVarAReserver++;
-			afftabSymb();
+			//afftabSymb();
 			break;
 		case 10: //reserver var
 			po.produire(RESERVER); //reserver
@@ -253,12 +253,14 @@ public class PtGen {
 			}
 			break;
 		case 13: //primaire valeur
+			System.out.println("PRIMAIRE VALEUR");
 			po.produire(EMPILER); //empiler val
 			po.produire(UtilLex.valNb); //valeur
 			break;
 		case 14: //primaire ident
 			int ident = presentIdent(1);
 			if(ident != 0) {
+				tCour = tabSymb[ident].type;
 				switch(tabSymb[ident].categorie) {
 					case CONSTANTE:
 						po.produire(EMPILER); // empiler
@@ -269,6 +271,8 @@ public class PtGen {
 					default: break;
 				}
 				po.produire(tabSymb[ident].info);
+			} else {
+				System.out.println("ident inexistant");
 			}
 			break;
 		case 15:
@@ -315,11 +319,16 @@ public class PtGen {
 			break;
 		case 29: // ou
 			po.produire(OU);
+			break;
+		case 30: // apres operation binaire int int -> bool
+			tCour = BOOL;
+			break;
 		default:
 			System.out
 					.println("Point de generation non prevu dans votre liste");
 			break;
 		}
+		po.constGen();
 	}
 }
     

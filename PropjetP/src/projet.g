@@ -146,7 +146,7 @@ effmods :'(' (ident  (',' ident  )*)? ')'
 expression: (exp1) ('ou' {PtGen.pt(16);} exp1 {PtGen.pt(16);} {PtGen.pt(29);} )*
   ;
   
-exp1  : exp2 ('et' {PtGen.pt(16);} exp2 {PtGen.pt(16);} {PtGen.pt(28); )*
+exp1  : exp2 ('et' {PtGen.pt(16);} exp2 {PtGen.pt(16);} {PtGen.pt(28);} )*
   ;
   
 exp2  : 'non' exp2 {PtGen.pt(16);} {PtGen.pt(27);}
@@ -154,12 +154,12 @@ exp2  : 'non' exp2 {PtGen.pt(16);} {PtGen.pt(27);}
   ;
   
 exp3  : exp4 
-  ( '=' {PtGen.pt(15);}  exp4 {PtGen.pt(15);} {PtGen.pt(21);}
-  | '<>' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(22);}
-  | '>'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(23);}
-  | '>=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(24);}
-  | '<'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(25);}
-  | '<=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(26);}
+  ( '=' {PtGen.pt(15);}  exp4 {PtGen.pt(15);} {PtGen.pt(21);} {PtGen.pt(30);}
+  | '<>' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(22);} {PtGen.pt(30);}
+  | '>'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(23);} {PtGen.pt(30);}
+  | '>=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(24);} {PtGen.pt(30);}
+  | '<'  {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(25);} {PtGen.pt(30);}
+  | '<=' {PtGen.pt(15);} exp4 {PtGen.pt(15);} {PtGen.pt(26);} {PtGen.pt(30);}
   ) ?
   ;
   
