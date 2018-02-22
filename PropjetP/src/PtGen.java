@@ -238,7 +238,19 @@ public class PtGen {
 			po.produire(RESERVER); //reserver
 			po.produire(nbVarAReserver);
 			nbVarAReserver = 0;
-			po.constGen();
+			break;
+		case 11: //ecriture entier
+			verifEnt();
+			System.out.println(vCour);
+			break;
+		case 12: //ecriture boolean
+			verifBool();
+			if(vCour == 1) {
+				System.out.println("V");
+			}
+			else if(vCour ==0) {
+				System.out.println("F");
+			}
 			break;
 		case 13: //primaire valeur
 			po.produire(EMPILER); //empiler val
@@ -259,20 +271,54 @@ public class PtGen {
 				po.produire(tabSymb[ident].info);
 			}
 			break;
+		case 15:
+			verifEnt();
+			break;
+		case 16:
+			verifBool();
+			break;
 		case 17: //mul
 			po.produire(MUL);
 			break;
 		case 18: //div
 			po.produire(DIV);
 			break;
+		case 19: // +
+			po.produire(ADD);
+			break;
+		case 20: // -
+			po.produire(SOUS);
+			break;
+		case 21: // =
+			po.produire(EG);
+			break;
+		case 22: // <>
+			po.produire(DIFF);
+			break;
+		case 23: // >
+			po.produire(SUP);
+			break;
+		case 24: // >=
+			po.produire(SUPEG);
+			break;
+		case 25: // <
+			po.produire(INF);
+			break;
+		case 26: // <=
+			po.produire(INFEG);
+			break;
 		case 27: // non
 			po.produire(NON);
 			break;
+		case 28: // et
+			po.produire(ET);
+			break;
+		case 29: // ou
+			po.produire(OU);
 		default:
 			System.out
 					.println("Point de generation non prevu dans votre liste");
 			break;
-
 		}
 	}
 }

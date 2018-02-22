@@ -206,7 +206,9 @@ ID  :   ('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 // zone purement lexicale //
 
 INT :   '0'..'9'+ ;
-WS  :   (' '|'\t' | '\n' |'\r')+ {skip();} ; // definition des "espaces"
+WS  :   (' '|'\t' |'\r')+ {skip();} ; // definition des "blocs d'espaces"
+RC  :   ('\n') {UtilLex.incrementeLigne(); skip() ;} ; // definition d'un unique "passage a la ligne" et comptage des numeros de lignes
+
 
 
 COMMENT
