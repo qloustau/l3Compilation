@@ -67,7 +67,7 @@ specif  : ident  ( 'fixe' '(' type  ( ',' type  )* ')' )?
 consts  : 'const' ( ident  '=' valeur  ptvg {PtGen.pt(1);} )+ 
   ;
   
-vars  : 'var' ( type ident {PtGen.pt(8);} ( ','  ident {PtGen.pt(8);} )* ptvg {PtGen.pt(10);} )+
+vars  : 'var' ( type ident {PtGen.pt(8);} ( ','  ident {PtGen.pt(8);} )* ptvg )+
   ;
   
 type  : 'ent' {PtGen.pt(6);}
@@ -84,7 +84,7 @@ ptvg  : ';'
   | 
   ;
   
-corps : 'debut' instructions 'fin'
+corps : {PtGen.pt(10);} 'debut' instructions 'fin'
   ;
   
 parfixe: 'fixe' '(' pf ( ';' pf)* ')'
@@ -113,7 +113,7 @@ instruction
   |
   ;
   
-inssi : 'si' expression 'alors' instructions ('sinon'  instructions)? 'fsi' 
+inssi : 'si' expression {PtGen.pt(300);} 'alors' instructions ('sinon' {PtGen.pt(301);} instructions)? 'fsi' {PtGen.pt(302);}
   ;
   
 inscond : 'cond'  expression  ':' instructions 

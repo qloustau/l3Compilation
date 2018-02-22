@@ -40,7 +40,7 @@ public class PtGen {
 	MAXSYMB=300,
 
 	// codes MAPILE :
-	RESERVER=1,EMPILER=2,CONTENUG=3,AFFECTERG=4,OU=5,ET=6,NON=7,INF=8,
+	AREMPLIR=-1,RESERVER=1,EMPILER=2,CONTENUG=3,AFFECTERG=4,OU=5,ET=6,NON=7,INF=8,
 	INFEG=9,SUP=10,SUPEG=11,EG=12,DIFF=13,ADD=14,SOUS=15,MUL=16,DIV=17,
 	BSIFAUX=18,BINCOND=19,LIRENT=20,LIREBOOL=21,ECRENT=22,ECRBOOL=23,
 	ARRET=24,EMPILERADG=25,EMPILERADL=26,CONTENUL=27,AFFECTERL=28,
@@ -272,7 +272,7 @@ public class PtGen {
 				}
 				po.produire(tabSymb[ident].info);
 			} else {
-				System.out.println("ident inexistant");
+				UtilLex.messErr("ident inexistant");
 			}
 			break;
 		case 15:
@@ -322,6 +322,25 @@ public class PtGen {
 			break;
 		case 30: // apres operation binaire int int -> bool
 			tCour = BOOL;
+			break;
+		case 300: // "si alors" production bsifaux ?, empiler l'adresse dans pilerep
+			po.produire(BSIFAUX);
+			po.produire(AREMPLIR);
+			pileRep.empiler(po.getIpo());
+			break;
+		case 301: // "sinon" production bincond ?, empiler l'adresse dans pilerep, résoudre bsifaux du si
+			po.produire(BINCOND);
+			
+			//depiler pilerep pour résoudre le bsifaux du si
+			po.modifier(pileRep.depiler(), po.getIpo());
+			
+			po.produire(AREMPLIR);
+			
+			pileRep.empiler(po.getIpo());
+			break;
+		case 302: // "fsi" résolution des bincond et bsifaux (sinon et si)
+			//depiler pilerep pour résoudre les bincond et bsifaux est conditions
+			po.modifier(pileRep.depiler(), po.getIpo());
 			break;
 		default:
 			System.out

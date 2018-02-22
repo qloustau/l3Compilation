@@ -1,35 +1,34 @@
 FICHIER DeclExp-T1.gen : 
 
-   1  reserver        2
-   3  reserver        3
-   5  empiler        77
-   7  empiler         7
-   9  sous      
-  10  empiler         2
-  12  div       
-  13  empiler         1
-  15  empiler         0
-  17  et        
-  18  contenug        2
-  20  non       
-  21  empiler         1
-  23  empiler         0
-  25  ou        
-  26  et        
-  27  contenug        0
-  29  empiler         5
-  31  add       
-  32  empiler        10
-  34  mul       
-  35  contenug        0
-  37  contenug        1
-  39  infeg     
-  40  contenug        0
-  42  empiler        10
-  44  diff      
-  45  ou        
-  46  contenug        0
-  48  contenug        1
-  50  contenug        2
-  52  contenug        3
-  54  contenug        4
+   1  reserver        5
+   3  empiler        77
+   5  empiler         7
+   7  sous      
+   8  empiler         2
+  10  div       
+  11  empiler         1
+  13  empiler         0
+  15  et        
+  16  contenug        2
+  18  non       
+  19  empiler         1
+  21  empiler         0
+  23  ou        
+  24  et        
+  25  contenug        0
+  27  empiler         5
+  29  add       
+  30  empiler        10
+  32  mul       
+  33  contenug        0
+  35  contenug        1
+  37  infeg     
+  38  contenug        0
+  40  empiler        10
+  42  diff      
+  43  ou        
+  44  contenug        0
+  46  contenug        1
+  48  contenug        2
+  50  contenug        3
+  52  contenug        4
