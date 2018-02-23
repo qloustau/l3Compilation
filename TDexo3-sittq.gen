@@ -1,0 +1,20 @@
+FICHIER TDexo3-sittq.gen : 
+
+   1  reserver        3
+   3  contenug        1
+   5  contenug        0
+   7  empiler        -1
+   9  diff      
+  10  contenug        0
+  12  contenug        2
+  14  sup       
+  15  bsifaux        19
+  17  contenug        0
+  19  bincond        29
+  21  contenug        0
+  23  contenug        1
+  25  inf       
+  26  bsifaux        29
+  28  contenug        0
+  30  contenug        1
+  32  contenug        2

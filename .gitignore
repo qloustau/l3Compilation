@@ -1,7 +1,10 @@
-# Ignore everything
-*
+# Ignore everything 
+/*
 
 # But not these files...
-#!.gitignore
-#!./ProjetP/src/projet.g
-#!./ProjetP/src/PtGen.java
+!.gitignore
+!src/
+src/*
+!src/projet.g
+!src/PtGen.java
+
