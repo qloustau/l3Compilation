@@ -6,18 +6,20 @@ FICHIER TDexo3-sittq.gen :
    7  contenug        0
    9  empiler        -1
   11  diff      
-  12  contenug        0
-  14  contenug        2
-  16  sup       
-  17  bsifaux        25
-  19  contenug        0
-  21  affecterg       2
-  23  bincond        35
-  25  contenug        0
-  27  contenug        1
-  29  inf       
-  30  bsifaux        35
-  32  contenug        0
-  34  affecterg       1
-  36  contenug        1
-  38  contenug        2
+  12  bsifaux        39
+  14  contenug        0
+  16  contenug        2
+  18  sup       
+  19  bsifaux        27
+  21  contenug        0
+  23  affecterg       2
+  25  bincond        37
+  27  contenug        0
+  29  contenug        1
+  31  inf       
+  32  bsifaux        37
+  34  contenug        0
+  36  affecterg       1
+  38  bincond         6
+  40  contenug        1
+  42  contenug        2

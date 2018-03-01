@@ -398,7 +398,7 @@ public class PtGen {
 			break;
 			
 		case 102:
-			
+			pileRep.empiler(po.getIpo());
 			break;
 			
 		case 103: //"ttq faire" production bsifaux ?, empiler l'adresse dans pileRep
@@ -409,7 +409,9 @@ public class PtGen {
 			
 		case 104: //"fait" résolution du bsifaux (ttq)
 			// depiler pileRep pour résoudre le bsifaux
-			po.modifier(pileRep.depiler(), po.getIpo());
+			po.produire(BINCOND);
+			po.modifier(pileRep.depiler(), po.getIpo()+1);
+			po.produire(pileRep.depiler());
 			break;
 			
 		default:
