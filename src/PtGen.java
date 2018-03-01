@@ -111,11 +111,10 @@ public class PtGen {
 									// globales
 	private static int nbVarAReserver; // nombre de var à réserver lors d'une
 										// déclaration
-	
-	private static int varIdent;
-    private static int varType;
-    private static int varCategorie;
 
+	private static int varIdent;
+	private static int varType;
+	private static int varCategorie;
 
 	// Dï¿½finition de la table des symboles
 	//
@@ -205,11 +204,10 @@ public class PtGen {
 
 		varGlbIt = 0;
 		nbVarAReserver = 0;
-		
-		varIdent = 0;
-	    varType = 0;
-	    varCategorie = 0;
 
+		varIdent = 0;
+		varType = 0;
+		varCategorie = 0;
 
 	} // initialisations
 
@@ -424,6 +422,25 @@ public class PtGen {
 
 	private static void ptAlexandre(int numGen) {
 		switch (numGen) {
+		case 200: // lecture
+			int identLecture = presentIdent(1);
+			if (tabSymb[identLecture].type == ENT) {
+				po.produire(LIRENT);
+				po.produire(AFFECTERG);
+			}
+			if (tabSymb[identLecture].type == BOOL) {
+				po.produire(LIREBOOL);
+				po.produire(AFFECTERG);
+			}
+			break;
+		case 201: // ecriture
+			if (tCour == ENT) {
+				po.produire(ECRENT);
+			}
+			if (tCour == BOOL) {
+				po.produire(ECRBOOL);
+			}
+			break;
 
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
@@ -444,10 +461,10 @@ public class PtGen {
 					// résoudre bsifaux du si
 			po.produire(BINCOND);
 
-			// depiler pilerep pour résoudre le bsifaux du si
-			po.modifier(pileRep.depiler(), po.getIpo());
-
 			po.produire(AREMPLIR);
+
+			// depiler pilerep pour résoudre le bsifaux du si
+			po.modifier(pileRep.depiler(), po.getIpo() + 1);
 
 			pileRep.empiler(po.getIpo());
 			break;
