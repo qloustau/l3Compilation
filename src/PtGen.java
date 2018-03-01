@@ -401,7 +401,7 @@ public class PtGen {
 			break;
 			
 		case 102:
-			pileRep.empiler(po.getIpo());
+			pileRep.empiler(po.getIpo()+1);
 			break;
 			
 		case 103: //"ttq faire" production bsifaux ?, empiler l'adresse dans pileRep
@@ -413,7 +413,7 @@ public class PtGen {
 		case 104: //"fait" résolution du bsifaux (ttq)
 			// depiler pileRep pour résoudre le bsifaux
 			po.produire(BINCOND);
-			po.modifier(pileRep.depiler(), po.getIpo()+1);
+			po.modifier(pileRep.depiler(), po.getIpo()+2);
 			po.produire(pileRep.depiler());
 			break;
 			
@@ -482,7 +482,7 @@ public class PtGen {
 		case 302: // "fsi" résolution des bincond et bsifaux (sinon et si)
 			// depiler pilerep pour résoudre les bincond et bsifaux est
 			// conditions
-			po.modifier(pileRep.depiler(), po.getIpo());
+			po.modifier(pileRep.depiler(), po.getIpo() + 1);
 			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
