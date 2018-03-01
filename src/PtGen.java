@@ -219,12 +219,15 @@ public class PtGen {
 		switch (numGen / 100) {
 		case 1:
 			ptNathanael(numGen);
+			po.constGen();
 			return;
 		case 2:
 			ptAlexandre(numGen);
+			po.constGen();
 			return;
 		case 3:
 			ptThomas(numGen);
+			po.constGen();
 			return;
 		}
 
@@ -406,18 +409,24 @@ public class PtGen {
 		switch (numGen) {
 		case 200: // lecture
 			int identLecture = presentIdent(1);
+			if (identLecture == 0) {
+				UtilLex.messErr("Identifiant inconnu");
+			}
 			if (tabSymb[identLecture].type == ENT) {
 				po.produire(LIRENT);
 				po.produire(AFFECTERG);
+				po.produire(tabSymb[identLecture].info);
 			}
 			if (tabSymb[identLecture].type == BOOL) {
 				po.produire(LIREBOOL);
 				po.produire(AFFECTERG);
+				po.produire(tabSymb[identLecture].info);
 			}
 			break;
 		case 201: // ecriture
 			if (tCour == ENT) {
 				po.produire(ECRENT);
+				System.out.println(tCour);
 			}
 			if (tCour == BOOL) {
 				po.produire(ECRBOOL);
