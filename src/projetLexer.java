@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// $ANTLR 3.5.2 projet.g 2018-03-01 09:36:26
-=======
-// $ANTLR 3.5.2 projet.g 2018-03-01 09:30:30
->>>>>>> 19880bf3b13d6a7c75632f46e9aeff5b5d387061
+// $ANTLR 3.5.2 projet.g 2018-03-01 15:57:46
 
 import org.antlr.runtime.*;
 import java.util.Stack;

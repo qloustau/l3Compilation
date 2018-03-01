@@ -10,7 +10,6 @@ FICHIER TDexo3-sittq.gen :
   13  contenug        0
   15  empiler        -1
   17  diff      
-<<<<<<< HEAD
   18  bsifaux        49
   20  contenug        0
   22  contenug        2
@@ -32,25 +31,4 @@ FICHIER TDexo3-sittq.gen :
   51  ecrent    
   52  contenug        2
   54  ecrent    
-=======
-  18  contenug        0
-  20  contenug        2
-  22  sup       
-  23  bsifaux        31
-  25  contenug        0
-  27  affecterg       2
-  29  bincond        42
-  31  contenug        0
-  33  contenug        1
-  35  inf       
-  36  bsifaux        42
-  38  contenug        0
-  40  affecterg       1
-  42  lirent    
-  43  affecterg       0
-  45  contenug        1
-  47  ecrent    
-  48  contenug        2
-  50  ecrent    
-  51  arret     
->>>>>>> 19880bf3b13d6a7c75632f46e9aeff5b5d387061
+  55  arret     

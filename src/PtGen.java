@@ -413,6 +413,40 @@ public class PtGen {
 			po.produire(pileRep.depiler());
 			break;
 			
+		case 105://"cond" on empile 0 en premier
+			pileRep.empiler(0);
+			break;
+		case 106: //cond production bsifaux
+			po.produire(BSIFAUX);
+			po.produire(AREMPLIR);
+			pileRep.empiler(po.getIpo());
+			break;
+		case 107://cond production bincond chaine resoud bsifaux
+			po.produire(BINCOND);
+			
+			po.modifier(pileRep.depiler(), po.getIpo() + 2);
+			po.produire(pileRep.depiler());
+			
+			pileRep.empiler(po.getIpo());
+			
+			break;
+		case 108: // cond resolution dernier bsifaux si pas d'instruction "aut"
+			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			break;
+		case 109:
+			int tmp = 0;
+			int firstBincond = pileRep.depiler();
+			int next = po.getElt(firstBincond);
+			
+			po.modifier(firstBincond, po.getIpo() + 1);
+			
+			while(next != 0) {
+				tmp = po.getElt(next);
+				po.modifier(next, po.getIpo() + 1);
+				next = tmp;
+			}
+			
+			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
 			break;
@@ -479,14 +513,11 @@ public class PtGen {
 			// depiler pilerep pour résoudre les bincond et bsifaux est
 			// conditions
 			po.modifier(pileRep.depiler(), po.getIpo() + 1);
-<<<<<<< HEAD
-=======
 			break;
 		case 303: //fin du programme
 			po.produire(ARRET);
 			po.constGen();
 			po.constObj();
->>>>>>> 19880bf3b13d6a7c75632f46e9aeff5b5d387061
 			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
