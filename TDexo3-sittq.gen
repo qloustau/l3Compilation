@@ -1,6 +1,7 @@
 FICHIER TDexo3-sittq.gen : 
 
    1  reserver        3
+<<<<<<< HEAD
    3  contenug        1
    5  affecterg       2
    7  contenug        0
@@ -23,3 +24,33 @@ FICHIER TDexo3-sittq.gen :
   38  bincond         6
   40  contenug        1
   42  contenug        2
+=======
+   3  lirent    
+   4  affecterg       1
+   6  contenug        1
+   8  affecterg       2
+  10  lirent    
+  11  affecterg       0
+  13  contenug        0
+  15  empiler        -1
+  17  diff      
+  18  contenug        0
+  20  contenug        2
+  22  sup       
+  23  bsifaux        31
+  25  contenug        0
+  27  affecterg       2
+  29  bincond        41
+  31  contenug        0
+  33  contenug        1
+  35  inf       
+  36  bsifaux        41
+  38  contenug        0
+  40  affecterg       1
+  42  lirent    
+  43  affecterg       0
+  45  contenug        1
+  47  ecrent    
+  48  contenug        2
+  50  ecrent    
+>>>>>>> af1f2944e7183641729202d28152d6148c7790ca
