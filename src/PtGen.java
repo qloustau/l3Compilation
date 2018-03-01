@@ -398,10 +398,28 @@ public class PtGen {
 				break;
 			}
 			break;
+			
+		case 102:
+			
+			break;
+			
+		case 103: //"ttq faire" production bsifaux ?, empiler l'adresse dans pileRep
+			po.produire(BSIFAUX);
+			po.produire(AREMPLIR);
+			pileRep.empiler(po.getIpo());
+			break;
+			
+		case 104: //"fait" résolution du bsifaux (ttq)
+			// depiler pileRep pour résoudre le bsifaux
+			po.modifier(pileRep.depiler(), po.getIpo());
+			break;
+			
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
 			break;
 		}
+		
+		
 	}
 
 	private static void ptAlexandre(int numGen) {
