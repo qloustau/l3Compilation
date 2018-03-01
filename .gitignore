@@ -3,3 +3,6 @@
 /.recommenders
 /.settings
 /.project
+/bin/*
+/src/projetLexer.java
+/src/projetParser.java
