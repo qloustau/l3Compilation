@@ -219,15 +219,12 @@ public class PtGen {
 		switch (numGen / 100) {
 		case 1:
 			ptNathanael(numGen);
-			po.constGen();
 			return;
 		case 2:
 			ptAlexandre(numGen);
-			po.constGen();
 			return;
 		case 3:
 			ptThomas(numGen);
-			po.constGen();
 			return;
 		}
 
@@ -359,7 +356,6 @@ public class PtGen {
 			System.out.println("Point de generation non prevu dans votre liste");
 			break;
 		}
-		po.constGen();
 	}
 
 	private static void ptNathanael(int numGen) {
@@ -462,7 +458,12 @@ public class PtGen {
 		case 302: // "fsi" résolution des bincond et bsifaux (sinon et si)
 			// depiler pilerep pour résoudre les bincond et bsifaux est
 			// conditions
-			po.modifier(pileRep.depiler(), po.getIpo());
+			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			break;
+		case 303: //fin du programme
+			po.produire(ARRET);
+			po.constGen();
+			po.constObj();
 			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");

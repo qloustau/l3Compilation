@@ -16,11 +16,11 @@ FICHIER TDexo3-sittq.gen :
   23  bsifaux        31
   25  contenug        0
   27  affecterg       2
-  29  bincond        41
+  29  bincond        42
   31  contenug        0
   33  contenug        1
   35  inf       
-  36  bsifaux        41
+  36  bsifaux        42
   38  contenug        0
   40  affecterg       1
   42  lirent    
@@ -29,3 +29,4 @@ FICHIER TDexo3-sittq.gen :
   47  ecrent    
   48  contenug        2
   50  ecrent    
+  51  arret     

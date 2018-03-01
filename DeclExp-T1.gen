@@ -33,7 +33,13 @@ FICHIER DeclExp-T1.gen :
   51  ou        
   52  affecterg       4
   54  contenug        0
-  56  contenug        1
-  58  contenug        2
-  60  contenug        3
-  62  contenug        4
+  56  ecrent    
+  57  contenug        1
+  59  ecrent    
+  60  contenug        2
+  62  ecrbool   
+  63  contenug        3
+  65  ecrbool   
+  66  contenug        4
+  68  ecrbool   
+  69  arret     
