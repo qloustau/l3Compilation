@@ -23,7 +23,7 @@ FICHIER polyP10-simple.gen :
   37  empiler        -5
   39  eg        
   40  bsifaux        46
-  42  empiler         0
+  42  empiler         1
   44  affecterg       4
   46  contenug        0
   48  empiler         1

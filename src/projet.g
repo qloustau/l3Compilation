@@ -40,7 +40,7 @@ unite  :   unitprog  EOF {PtGen.pt(303);}
   
 unitprog
   : 'programme' ident ':'  
-     declarations  
+     declarations  {PtGen.pt(310);}
      corps { System.out.println("succes, arret de la compilation "); }
   ;
   
@@ -50,7 +50,7 @@ unitmodule
   ;
   
 declarations
-  : partiedef? partieref? consts? vars? decprocs? 
+  : partiedef? partieref? consts? vars? {PtGen.pt(309);} decprocs? 
   ;
   
 partiedef
@@ -67,7 +67,7 @@ specif  : ident  ( 'fixe' '(' type  ( ',' type  )* ')' )?
 consts  : 'const' ( ident  '=' valeur  ptvg {PtGen.pt(1);} )+ 
   ;
   
-vars  : 'var' ( type ident {PtGen.pt(8);} ( ','  ident {PtGen.pt(8);} )* ptvg )+
+vars  : 'var' ( type ident {PtGen.pt(8);} ( ','  ident {PtGen.pt(8);} )* ptvg )+ {PtGen.pt(10);}
   ;
   
 type  : 'ent' {PtGen.pt(6);}
@@ -77,26 +77,26 @@ type  : 'ent' {PtGen.pt(6);}
 decprocs: (decproc ptvg)+
   ;
   
-decproc :  'proc'  ident  parfixe? parmod? consts? vars? corps 
+decproc :  'proc'  ident {PtGen.pt(304);} parfixe? parmod? {PtGen.pt(307);} consts? vars? corps 
   ;
   
 ptvg  : ';'
   | 
   ;
   
-corps : {PtGen.pt(10);} 'debut' instructions 'fin'
+corps : 'debut' instructions 'fin' {PtGen.pt(308);}
   ;
   
 parfixe: 'fixe' '(' pf ( ';' pf)* ')'
   ;
   
-pf  : type ident  ( ',' ident  )*  
+pf  : type ident {PtGen.pt(305);} ( ',' ident {PtGen.pt(305);} )*  
   ;
 
 parmod  : 'mod' '(' pm ( ';' pm)* ')'
   ;
   
-pm  : type ident  ( ',' ident  )*
+pm  : type ident {PtGen.pt(306);} ( ',' ident {PtGen.pt(306);} )*
   ;
   
 instructions
