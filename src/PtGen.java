@@ -121,6 +121,10 @@ public class PtGen {
 	private static int nbParamProc;
 	private static int indexPriveeProc;
 
+	private static int nbParamFixe;
+	private static int nbParamMod;
+	private static int procIdent;
+
 	// Dï¿½finition de la table des symboles
 	//
 	private static EltTabSymb[] tabSymb = new EltTabSymb[MAXSYMB + 1];
@@ -154,7 +158,7 @@ public class PtGen {
 		}
 		it = it + 1;
 		tabSymb[it] = new EltTabSymb(c, cat, t, v);
-		if (cat == VARGLOBALE) {
+		if (cat == VARGLOBALE || cat == VARLOCALE) {
 			varsIterator++;
 		}
 	}
@@ -218,6 +222,9 @@ public class PtGen {
 		nbParamProc = 0;
 		indexPriveeProc = 0;
 
+		nbParamFixe = 0;
+		nbParamMod = 0;
+		procIdent = 0;
 	} // initialisations
 
 	// code des points de generation A COMPLETER
@@ -268,6 +275,7 @@ public class PtGen {
 			tCour = BOOL;
 			break;
 		case 8: // decl var
+			//System.out.println("DECL VAR " + isInProc + " varIT " + varsIterator + " num " + UtilLex.repId(UtilLex.numId));
 			placeIdent(UtilLex.numId, isInProc ? VARLOCALE : VARGLOBALE, tCour, varsIterator);
 			nbVarAReserver++;
 			break;
@@ -295,12 +303,12 @@ public class PtGen {
 					break;
 				case VARLOCALE:
 				case PARAMFIXE:
-					po.produire(CONTENUL); // contenug
+					po.produire(CONTENUL); // contenul
 					po.produire(tabSymb[ident].info);
 					po.produire(0);
 					break;
 				case PARAMMOD:
-					po.produire(CONTENUL); // contenug
+					po.produire(CONTENUL); // contenul
 					po.produire(tabSymb[ident].info);
 					po.produire(1);
 					break;
@@ -368,9 +376,8 @@ public class PtGen {
 	private static void ptNathanael(int numGen) {
 		switch (numGen) {
 		case 100: // Lecture de l'ident
-			System.out.println("LECTURE IDENT");
-			afftabSymb();
-			System.out.println("BC MDR " + bc + " lol " + UtilLex.repId(UtilLex.numId));
+			// System.out.println("LECTURE IDENT");
+			// afftabSymb();
 			varIdent = presentIdent(1);
 			if (varIdent == 0) {
 				UtilLex.messErr("Identifiant inconnu");
@@ -391,7 +398,7 @@ public class PtGen {
 			} else {
 				verifBool();
 			}
-			System.out.println(tabSymb[varIdent]);
+			// System.out.println(tabSymb[varIdent]);
 			// affecter
 			switch (varCategorie) {
 
@@ -555,24 +562,25 @@ public class PtGen {
 			break;
 		case 303: // fin du programme
 			po.produire(ARRET);
-			System.out.println(">>>>>>>>>>>>>>>>>>>> FIN");
 			afftabSymb();
 			po.constGen();
 			po.constObj();
 			break;
-		case 304: // declration proc
+		case 304: // declaration proc
 			isInProc = true;
 			varsIterator = 0;
 			placeIdent(UtilLex.numId, PROC, NEUTRE, po.getIpo() + 1);
 			placeIdent(-1, PRIVEE, NEUTRE, varsIterator);
 			indexPriveeProc = it;
 			bc = it + 1;
-			System.out.println("INDEX PRIVEE");
+			nbParamProc = 0;
+
 			afftabSymb();
 			break;
 		case 305: // param fixe
 			if (presentIdent(bc) == 0) {
 				placeIdent(UtilLex.numId, PARAMFIXE, tCour, varsIterator++);
+				nbParamProc++;
 			} else {
 				UtilLex.messErr("Parametre fixe doublon");
 			}
@@ -580,6 +588,7 @@ public class PtGen {
 		case 306: // param mod
 			if (presentIdent(bc) == 0) {
 				placeIdent(UtilLex.numId, PARAMMOD, tCour, varsIterator++);
+				nbParamProc++;
 			} else {
 				UtilLex.messErr("Parametre modifiable doublon");
 			}
@@ -588,7 +597,6 @@ public class PtGen {
 			tabSymb[indexPriveeProc].info = varsIterator;
 			varsIterator += 2; // Pour affecter vars locales
 
-			System.out.println("Fin decl proc");
 			afftabSymb();
 
 			break;
@@ -596,7 +604,7 @@ public class PtGen {
 			if (isInProc) {
 				isInProc = false;
 				po.produire(RETOUR);
-				po.produire(varsIterator - 2); // -2 pour les valeurs privées
+				po.produire(nbParamProc);
 
 				// On enlève les constantes et variables locales
 				while (it >= bc && (tabSymb[it].categorie == CONSTANTE || tabSymb[it].categorie == VARLOCALE)) {
@@ -617,8 +625,69 @@ public class PtGen {
 			po.produire(AREMPLIR);
 			pileRep.empiler(po.getIpo());
 			break;
-		case 310: //debut prog principal
+		case 310: // debut prog principal
 			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			break;
+		case 311: // Appel procedure
+			procIdent = presentIdent(1);
+			if (procIdent == 0) {
+				UtilLex.messErr("Identifiant inconnu");
+			}
+			if (tabSymb[procIdent].categorie == PROC) {				
+				nbParamFixe = 0;
+				nbParamMod = 0;
+			} else {
+				UtilLex.messErr("L'identifiant n'est pas une procédure");
+			}
+
+			break;
+		case 312: // ajout parametres fixes
+			int identParamFixe = procIdent + 1 + ++nbParamFixe;
+			if (tabSymb[identParamFixe].categorie != PARAMFIXE || tabSymb[identParamFixe].type != tCour) {
+				UtilLex.messErr("Appel de procedure : Parametre fixe incorrect");
+			}
+			break;
+		case 313: // ajout parametres mod
+			int identParamMod = procIdent + 1 + nbParamFixe + ++nbParamMod;
+			int paramIdent = presentIdent(1);
+			afftabSymb();
+			
+			if (tabSymb[identParamMod].categorie == PARAMMOD && tabSymb[identParamMod].type == tabSymb[paramIdent].type) {
+				
+				switch (tabSymb[paramIdent].categorie) {
+				case VARGLOBALE:
+					po.produire(EMPILERADG);
+					po.produire(tabSymb[paramIdent].info);
+					break;
+				case VARLOCALE:
+				case PARAMFIXE:
+					po.produire(EMPILERADL);
+					po.produire(tabSymb[paramIdent].info);
+					po.produire(0);
+					break;
+				case PARAMMOD:
+					po.produire(EMPILERADL);
+					po.produire(tabSymb[paramIdent].info);
+					po.produire(1);
+					break;
+				default:
+					UtilLex.messErr("Appel de procedure : Categorie de parametre incorrect");
+					break;
+				}
+			} else {
+				UtilLex.messErr("Appel de procedure : Parametre modifiable incorrect");
+			}
+			break;
+		case 314://production appel
+			int nbParamCompte = nbParamFixe + nbParamMod;
+			// Si on a le bon nombre de parametre dans l'appel et dans la declaration de proc
+			if(tabSymb[procIdent + 1].info == nbParamCompte){
+				po.produire(APPEL);
+				po.produire(tabSymb[procIdent].info);
+				po.produire(nbParamCompte);
+			} else {
+				UtilLex.messErr("Appel de procedure : Nombre de parametres incorrect");
+			}
 			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");

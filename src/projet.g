@@ -132,15 +132,15 @@ ecriture: 'ecrire' '(' expression{PtGen.pt(201);}  ( ',' expression{PtGen.pt(201
    ;
 
 affouappel
-  : ident {PtGen.pt(100);} (    ':=' expression {PtGen.pt(101);} 
-            |   (effixes (effmods)?)?  
+  : ident  (  {PtGen.pt(100);}  ':=' expression {PtGen.pt(101);} 
+            | {PtGen.pt(311);}  (effixes (effmods)? {PtGen.pt(314);})?  
            )
   ;
   
-effixes : '(' (expression  (',' expression  )*)? ')'
+effixes : '(' (expression {PtGen.pt(312);} (',' expression {PtGen.pt(312);} )*)? ')'
   ;
   
-effmods :'(' (ident  (',' ident  )*)? ')'
+effmods :'(' (ident {PtGen.pt(313);} (',' ident {PtGen.pt(313);} )*)? ')'
   ; 
   
 expression: (exp1) ('ou' {PtGen.pt(16);} exp1 {PtGen.pt(16);} {PtGen.pt(29);} )*
