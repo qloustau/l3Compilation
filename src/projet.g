@@ -54,14 +54,14 @@ declarations
   ;
   
 partiedef
-  : 'def' ident  (',' ident )* ptvg
+  : 'def' ident {PtGen.pt(110);}(',' ident {PtGen.pt(110);})* ptvg
   ;
   
-partieref: 'ref'  specif (',' specif)* ptvg
+partieref: 'ref'  specif {PtGen.pt(111);} (',' specif {PtGen.pt(111);} )* ptvg
   ;
   
-specif  : ident  ( 'fixe' '(' type  ( ',' type  )* ')' )? 
-                 ( 'mod'  '(' type  ( ',' type  )* ')' )? 
+specif  : ident  ( 'fixe' '(' type  {PtGen.pt(112);}( ',' type  {PtGen.pt(112);})* ')' )? 
+                 ( 'mod'  '(' type  {PtGen.pt(112);}( ',' type  {PtGen.pt(112);})* ')' )? 
   ;
   
 consts  : 'const' ( ident  '=' valeur  ptvg {PtGen.pt(1);} )+ 
