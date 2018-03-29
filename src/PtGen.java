@@ -120,11 +120,11 @@ public class PtGen {
 	private static boolean isInProc;
 	private static int nbParamProc;
 	private static int indexPriveeProc;
-	private static boolean hasProc; // Aide à la gestion de bincond si procédures existantes
 
 	private static int nbParamFixe;
 	private static int nbParamMod;
 	private static int procIdent;
+	private static String currentProcName;
 
 	// Dï¿½finition de la table des symboles
 	//
@@ -222,11 +222,12 @@ public class PtGen {
 		isInProc = false;
 		nbParamProc = 0;
 		indexPriveeProc = 0;
-		hasProc = false;
 
 		nbParamFixe = 0;
 		nbParamMod = 0;
 		procIdent = 0;
+		
+		currentProcName = "";
 	} // initialisations
 
 	// code des points de generation A COMPLETER
@@ -280,6 +281,9 @@ public class PtGen {
 			//System.out.println("DECL VAR " + isInProc + " varIT " + varsIterator + " num " + UtilLex.repId(UtilLex.numId));
 			placeIdent(UtilLex.numId, isInProc ? VARLOCALE : VARGLOBALE, tCour, varsIterator);
 			nbVarAReserver++;
+			if(!isInProc){ //augmente nb var globale dans desc
+				desc.setTailleGlobaux(desc.getTailleGlobaux() + 1);
+			}
 			break;
 		case 10: // reserver var
 			po.produire(RESERVER); // reserver
@@ -564,6 +568,7 @@ public class PtGen {
 			break;
 		case 303: // fin du programme
 			po.produire(ARRET);
+			desc.setTailleCode(po.getIpo());
 			afftabSymb();
 			po.constGen();
 			po.constObj();
@@ -572,10 +577,19 @@ public class PtGen {
 			isInProc = true;
 			varsIterator = 0;
 			placeIdent(UtilLex.numId, PROC, NEUTRE, po.getIpo() + 1);
-			placeIdent(-1, PRIVEE, NEUTRE, varsIterator);
+			
 			indexPriveeProc = it;
 			bc = it + 1;
 			nbParamProc = 0;
+
+			currentProcName = UtilLex.repId(UtilLex.numId);
+			int idDef = desc.presentDef(currentProcName);
+			if(idDef != 0){ //si la procedure est publique
+				desc.modifDefAdPo(idDef, po.getIpo() + 1);
+				placeIdent(-1, DEF, NEUTRE, varsIterator);
+			} else {
+				placeIdent(-1, PRIVEE, NEUTRE, varsIterator);
+			}
 
 			afftabSymb();
 			break;
@@ -597,6 +611,11 @@ public class PtGen {
 			break;
 		case 307: // fin decl proc
 			tabSymb[indexPriveeProc].info = varsIterator;
+			int idDefBis = desc.presentDef(currentProcName);
+			if(idDefBis != 0){ //si la procedure est publique
+				desc.modifDefNbParam(idDefBis, varsIterator);
+			}
+			
 			varsIterator += 2; // Pour affecter vars locales
 
 			afftabSymb();
@@ -622,17 +641,20 @@ public class PtGen {
 				// Fin prog
 			}
 			break;
-		case 309: // debut decl proc
+		case 309: // debut decl procs
 			po.produire(BINCOND);
 			po.produire(AREMPLIR);
 			pileRep.empiler(po.getIpo());
-			
-			hasProc = true;
 			break;
-		case 310: // debut prog principal
-			if(hasProc){
-				po.modifier(pileRep.depiler(), po.getIpo() + 1);
+		case 310: // fin decl procs
+			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			
+			for (int i = desc.getNbDef(); i > 0; i--) {
+				if(desc.getDefAdPo(i) == -1){
+					UtilLex.messErr("Procédure publique déclarée mais pas codée");
+				}
 			}
+			
 			break;
 		case 311: // Appel procedure
 			procIdent = presentIdent(1);
@@ -694,6 +716,12 @@ public class PtGen {
 			} else {
 				UtilLex.messErr("Appel de procedure : Nombre de parametres incorrect");
 			}
+			break;
+		case 315: //unite prog
+			desc.setUnite("programme");
+			break;
+		case 316: //unite module
+			desc.setUnite("module");
 			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
