@@ -488,21 +488,25 @@ public class PtGen {
 			desc.ajoutDef(UtilLex.repId(UtilLex.numId));
 			break;
 			
-		case 111: 
-			desc.ajoutRef(UtilLex.repId(UtilLex.numId));
+		case 111: //fin signature ref
 			desc.modifRefNbParam(UtilLex.numId, nbParamRef);
-			placeIdent(UtilLex.numId, PROC, NEUTRE, desc.presentRef(UtilLex.repId(UtilLex.numId)));
-			placeIdent(-1, REF, NEUTRE, nbParamRef);
+			tabSymb[presentIdent(1) + 1].info = nbParamRef; //modif du champs nombre de parametre de la ref
+			nbParamRef = 0;
+			afftabSymb();
 			break;
 			
-		case 112:
+		case 112: //ref param fix
 			placeIdent(-1, PARAMFIXE, tCour, nbParamRef++);
 			break;
 			
-		case 113:
+		case 113: //ref param mod
 			placeIdent(-1, PARAMMOD, tCour, nbParamRef++);
 			break;
-			
+		case 114: //deb signature ref
+			desc.ajoutRef(UtilLex.repId(UtilLex.numId));
+			placeIdent(UtilLex.numId, PROC, NEUTRE, desc.presentRef(UtilLex.repId(UtilLex.numId)));
+			placeIdent(-1, REF, NEUTRE, AREMPLIR);
+			break;
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
 			break;
@@ -595,6 +599,7 @@ public class PtGen {
 			afftabSymb();
 			po.constGen();
 			po.constObj();
+			System.out.println(desc);
 			break;
 		case 304: // declaration proc
 			isInProc = true;
