@@ -126,6 +126,7 @@ public class PtGen {
 	private static int procIdent;
 	private static String currentProcName;
 
+	private static int nbParamRef;
 	// D�finition de la table des symboles
 	//
 	private static EltTabSymb[] tabSymb = new EltTabSymb[MAXSYMB + 1];
@@ -227,7 +228,9 @@ public class PtGen {
 		nbParamMod = 0;
 		procIdent = 0;
 		
+
 		currentProcName = "";
+		nbParamRef = 0;
 	} // initialisations
 
 	// code des points de generation A COMPLETER
@@ -480,6 +483,24 @@ public class PtGen {
 			}
 
 			break;
+			
+		case 110:
+			desc.ajoutDef(UtilLex.repId(UtilLex.numId));
+			break;
+			
+		case 111: 
+			desc.ajoutRef(UtilLex.repId(UtilLex.numId));
+			desc.modifRefNbParam(UtilLex.numId, nbParamRef);
+			break;
+			
+		case 112:
+			nbParamRef++;
+			break;
+			
+		case 113:
+			
+			break;
+			
 		default:
 			System.out.println("Point de generation non prevu dans votre liste");
 			break;

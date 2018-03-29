@@ -1,37 +1,38 @@
 FICHIER polyP10-simple.gen : 
 
    1  reserver        5
-   3  lirent    
-   4  affecterg       1
-   6  contenug        1
-   8  affecterg       0
-  10  empiler         0
-  12  affecterg       3
-  14  empiler         0
-  16  affecterg       4
-  18  contenug        0
-  20  empiler         0
-  22  sup       
-  23  bsifaux        55
-  25  lirent    
-  26  affecterg       2
-  28  contenug        3
-  30  contenug        2
-  32  add       
-  33  affecterg       3
-  35  contenug        2
-  37  empiler        -5
-  39  eg        
-  40  bsifaux        46
-  42  empiler         1
-  44  affecterg       4
-  46  contenug        0
-  48  empiler         1
-  50  sous      
-  51  affecterg       0
-  53  bincond        18
-  55  contenug        3
-  57  ecrent    
-  58  contenug        4
-  60  ecrbool   
-  61  arret     
+   3  bincond         5
+   5  lirent    
+   6  affecterg       1
+   8  contenug        1
+  10  affecterg       0
+  12  empiler         0
+  14  affecterg       3
+  16  empiler         0
+  18  affecterg       4
+  20  contenug        0
+  22  empiler         0
+  24  sup       
+  25  bsifaux        57
+  27  lirent    
+  28  affecterg       2
+  30  contenug        3
+  32  contenug        2
+  34  add       
+  35  affecterg       3
+  37  contenug        2
+  39  empiler        -5
+  41  eg        
+  42  bsifaux        48
+  44  empiler         1
+  46  affecterg       4
+  48  contenug        0
+  50  empiler         1
+  52  sous      
+  53  affecterg       0
+  55  bincond        20
+  57  contenug        3
+  59  ecrent    
+  60  contenug        4
+  62  ecrbool   
+  63  arret     
