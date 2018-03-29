@@ -61,7 +61,7 @@ partieref: 'ref'  specif {PtGen.pt(111);} (',' specif {PtGen.pt(111);} )* ptvg
   ;
   
 specif  : ident  ( 'fixe' '(' type  {PtGen.pt(112);}( ',' type  {PtGen.pt(112);})* ')' )? 
-                 ( 'mod'  '(' type  {PtGen.pt(112);}( ',' type  {PtGen.pt(112);})* ')' )? 
+                 ( 'mod'  '(' type  {PtGen.pt(113);}( ',' type  {PtGen.pt(113);})* ')' )? 
   ;
   
 consts  : 'const' ( ident  '=' valeur  ptvg {PtGen.pt(1);} )+ 
