@@ -308,6 +308,7 @@ public class PtGen {
 					break;
 				case VARGLOBALE:
 					po.produire(CONTENUG); // contenug
+					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[ident].info);
 					break;
 				case VARLOCALE:
@@ -413,6 +414,7 @@ public class PtGen {
 
 			case VARGLOBALE:
 				po.produire(AFFECTERG);
+				modifVecteurTrans(TRANSDON);
 				po.produire(tabSymb[varIdent].info);
 				break;
 			case VARLOCALE:
@@ -439,6 +441,7 @@ public class PtGen {
 					// pileRep
 			po.produire(BSIFAUX);
 			po.produire(AREMPLIR);
+			modifVecteurTrans(TRANSCODE);
 			pileRep.empiler(po.getIpo());
 			break;
 
@@ -447,6 +450,7 @@ public class PtGen {
 			po.produire(BINCOND);
 			po.modifier(pileRep.depiler(), po.getIpo() + 2);
 			po.produire(pileRep.depiler());
+			modifVecteurTrans(TRANSCODE);
 			break;
 
 		case 105:// "cond" on empile 0 en premier
@@ -455,6 +459,7 @@ public class PtGen {
 		case 106: // cond production bsifaux
 			po.produire(BSIFAUX);
 			po.produire(AREMPLIR);
+			modifVecteurTrans(TRANSCODE);
 			pileRep.empiler(po.getIpo());
 			break;
 		case 107:// cond production bincond chaine resoud bsifaux
@@ -462,7 +467,7 @@ public class PtGen {
 
 			po.modifier(pileRep.depiler(), po.getIpo() + 2);
 			po.produire(pileRep.depiler());
-
+			modifVecteurTrans(TRANSCODE);
 			pileRep.empiler(po.getIpo());
 
 			break;
@@ -526,6 +531,7 @@ public class PtGen {
 				po.produire(LIRENT);
 				if (tabSymb[identLecture].categorie == VARGLOBALE) {
 					po.produire(AFFECTERG);
+					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[identLecture].info);
 				} else if (tabSymb[identLecture].categorie == VARLOCALE) {
 					po.produire(AFFECTERL);
@@ -541,6 +547,7 @@ public class PtGen {
 				po.produire(LIREBOOL);
 				if (tabSymb[identLecture].categorie == VARGLOBALE) {
 					po.produire(AFFECTERG);
+					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[identLecture].info);
 				} else if (tabSymb[identLecture].categorie == VARLOCALE) {
 					po.produire(AFFECTERL);
@@ -574,6 +581,7 @@ public class PtGen {
 			// pilerep
 			po.produire(BSIFAUX);
 			po.produire(AREMPLIR);
+			modifVecteurTrans(TRANSCODE);
 			pileRep.empiler(po.getIpo());
 			break;
 		case 301: // "sinon" production bincond ?, empiler l'adresse dans
@@ -582,7 +590,7 @@ public class PtGen {
 			po.produire(BINCOND);
 
 			po.produire(AREMPLIR);
-
+			modifVecteurTrans(TRANSCODE);
 			// depiler pilerep pour résoudre le bsifaux du si
 			po.modifier(pileRep.depiler(), po.getIpo() + 1);
 
@@ -672,6 +680,7 @@ public class PtGen {
 		case 309: // debut decl procs
 			po.produire(BINCOND);
 			po.produire(AREMPLIR);
+			modifVecteurTrans(TRANSCODE);
 			pileRep.empiler(po.getIpo());
 			break;
 		case 310: // fin decl procs
@@ -713,6 +722,7 @@ public class PtGen {
 				switch (tabSymb[paramIdent].categorie) {
 				case VARGLOBALE:
 					po.produire(EMPILERADG);
+					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[paramIdent].info);
 					break;
 				case VARLOCALE:
@@ -740,6 +750,7 @@ public class PtGen {
 			if(tabSymb[procIdent + 1].info == nbParamCompte){
 				po.produire(APPEL);
 				po.produire(tabSymb[procIdent].info);
+				modifVecteurTrans(TRANSCODE);
 				po.produire(nbParamCompte);
 			} else {
 				UtilLex.messErr("Appel de procedure : Nombre de parametres incorrect");
