@@ -50,7 +50,7 @@ unitmodule
   ;
   
 declarations
-  : partiedef? partieref? consts? vars? {PtGen.pt(309);} decprocs? 
+  : partiedef? partieref? consts? vars? decprocs? 
   ;
   
 partiedef
@@ -74,7 +74,7 @@ type  : 'ent' {PtGen.pt(6);}
   |     'bool' {PtGen.pt(7);}
   ;
   
-decprocs: (decproc ptvg)+
+decprocs: {PtGen.pt(309);} (decproc ptvg)+
   ;
   
 decproc :  'proc'  ident {PtGen.pt(304);} parfixe? parmod? {PtGen.pt(307);} consts? vars? corps 

@@ -120,6 +120,7 @@ public class PtGen {
 	private static boolean isInProc;
 	private static int nbParamProc;
 	private static int indexPriveeProc;
+	private static boolean hasProc; // Aide à la gestion de bincond si procédures existantes
 
 	private static int nbParamFixe;
 	private static int nbParamMod;
@@ -221,6 +222,7 @@ public class PtGen {
 		isInProc = false;
 		nbParamProc = 0;
 		indexPriveeProc = 0;
+		hasProc = false;
 
 		nbParamFixe = 0;
 		nbParamMod = 0;
@@ -624,9 +626,13 @@ public class PtGen {
 			po.produire(BINCOND);
 			po.produire(AREMPLIR);
 			pileRep.empiler(po.getIpo());
+			
+			hasProc = true;
 			break;
 		case 310: // debut prog principal
-			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			if(hasProc){
+				po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			}
 			break;
 		case 311: // Appel procedure
 			procIdent = presentIdent(1);
