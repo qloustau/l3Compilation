@@ -485,14 +485,16 @@ public class PtGen {
 		case 111: 
 			desc.ajoutRef(UtilLex.repId(UtilLex.numId));
 			desc.modifRefNbParam(UtilLex.numId, nbParamRef);
+			placeIdent(UtilLex.numId, PROC, NEUTRE, desc.presentRef(UtilLex.repId(UtilLex.numId)));
+			placeIdent(-1, REF, NEUTRE, nbParamRef);
 			break;
 			
 		case 112:
-			nbParamRef++;
+			placeIdent(-1, PARAMFIXE, tCour, nbParamRef++);
 			break;
 			
 		case 113:
-			
+			placeIdent(-1, PARAMMOD, tCour, nbParamRef++);
 			break;
 			
 		default:
