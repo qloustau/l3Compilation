@@ -1,0 +1,17 @@
+FICHIER m1.gen : 
+
+   1  reserver        1
+   3  bincond        30
+   5  contenul        0   0
+   8  empiler         0
+  10  eg        
+  11  bsifaux        20
+  13  empileradg      0
+  15  appel           1   1
+  18  bincond        28
+  20  contenug        0
+  22  contenul        0   0
+  25  add       
+  26  affecterg       0
+  28  retour          1
+  30  arret     

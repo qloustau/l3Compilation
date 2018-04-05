@@ -1,0 +1,12 @@
+FICHIER m1.desc :
+
+unite          module
+tailleCode     30
+tailleGlobaux  1
+nbDef          1
+nbRef          1
+nbTransExt     7
+tabDef          
+    ajout  5  1
+tabRef          
+    init  1

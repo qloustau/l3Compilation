@@ -127,6 +127,7 @@ public class PtGen {
 	private static String currentProcName;
 
 	private static int nbParamRef;
+	private static int nbProc;
 	// Dï¿½finition de la table des symboles
 	//
 	private static EltTabSymb[] tabSymb = new EltTabSymb[MAXSYMB + 1];
@@ -231,6 +232,7 @@ public class PtGen {
 
 		currentProcName = "";
 		nbParamRef = 0;
+		nbProc = 0;
 	} // initialisations
 
 	// code des points de generation A COMPLETER
@@ -289,8 +291,10 @@ public class PtGen {
 			}
 			break;
 		case 10: // reserver var
-			po.produire(RESERVER); // reserver
-			po.produire(nbVarAReserver);
+			if(desc.getUnite().equals("programme")) {
+				po.produire(RESERVER); // reserver
+				po.produire(nbVarAReserver);
+			}
 			nbVarAReserver = 0;
 			break;
 		case 13: // primaire valeur
@@ -308,8 +312,8 @@ public class PtGen {
 					break;
 				case VARGLOBALE:
 					po.produire(CONTENUG); // contenug
-					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[ident].info);
+					modifVecteurTrans(TRANSDON);
 					break;
 				case VARLOCALE:
 				case PARAMFIXE:
@@ -414,8 +418,8 @@ public class PtGen {
 
 			case VARGLOBALE:
 				po.produire(AFFECTERG);
-				modifVecteurTrans(TRANSDON);
 				po.produire(tabSymb[varIdent].info);
+				modifVecteurTrans(TRANSDON);
 				break;
 			case VARLOCALE:
 				po.produire(AFFECTERL);
@@ -494,10 +498,17 @@ public class PtGen {
 			break;
 			
 		case 111: //fin signature ref
-			desc.modifRefNbParam(UtilLex.numId, nbParamRef);
+			int id = desc.presentRef(UtilLex.repId(UtilLex.numId));
+			if(id != 0) {
+				desc.modifRefNbParam(id, nbParamRef);
+			} else {
+				UtilLex.messErr("Erreur ref non présente");
+			}
 			tabSymb[presentIdent(1) + 1].info = nbParamRef; //modif du champs nombre de parametre de la ref
 			nbParamRef = 0;
 			afftabSymb();
+			System.out.println("NBPARAM " + nbParamRef);
+			System.out.println(desc);
 			break;
 			
 		case 112: //ref param fix
@@ -531,8 +542,8 @@ public class PtGen {
 				po.produire(LIRENT);
 				if (tabSymb[identLecture].categorie == VARGLOBALE) {
 					po.produire(AFFECTERG);
-					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[identLecture].info);
+					modifVecteurTrans(TRANSDON);
 				} else if (tabSymb[identLecture].categorie == VARLOCALE) {
 					po.produire(AFFECTERL);
 					po.produire(tabSymb[identLecture].info);
@@ -547,8 +558,8 @@ public class PtGen {
 				po.produire(LIREBOOL);
 				if (tabSymb[identLecture].categorie == VARGLOBALE) {
 					po.produire(AFFECTERG);
-					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[identLecture].info);
+					modifVecteurTrans(TRANSDON);
 				} else if (tabSymb[identLecture].categorie == VARLOCALE) {
 					po.produire(AFFECTERL);
 					po.produire(tabSymb[identLecture].info);
@@ -602,14 +613,18 @@ public class PtGen {
 			po.modifier(pileRep.depiler(), po.getIpo() + 1);
 			break;
 		case 303: // fin du programme
-			po.produire(ARRET);
+			if(desc.getUnite().equals("programme")) {
+				po.produire(ARRET);
+			}
 			desc.setTailleCode(po.getIpo());
 			afftabSymb();
 			po.constGen();
 			po.constObj();
+			desc.ecrireDesc(UtilLex.nomSource);
 			System.out.println(desc);
 			break;
 		case 304: // declaration proc
+			nbProc++;
 			isInProc = true;
 			varsIterator = 0;
 			placeIdent(UtilLex.numId, PROC, NEUTRE, po.getIpo() + 1);
@@ -646,7 +661,7 @@ public class PtGen {
 			}
 			break;
 		case 307: // fin decl proc
-			tabSymb[indexPriveeProc].info = varsIterator;
+			tabSymb[indexPriveeProc + 1].info = varsIterator;
 			int idDefBis = desc.presentDef(currentProcName);
 			if(idDefBis != 0){ //si la procedure est publique
 				desc.modifDefNbParam(idDefBis, varsIterator);
@@ -678,13 +693,22 @@ public class PtGen {
 			}
 			break;
 		case 309: // debut decl procs
-			po.produire(BINCOND);
-			po.produire(AREMPLIR);
-			modifVecteurTrans(TRANSCODE);
-			pileRep.empiler(po.getIpo());
+			if(desc.getUnite().equals("programme")) {
+				po.produire(BINCOND);
+				po.produire(AREMPLIR);
+				modifVecteurTrans(TRANSCODE);
+				pileRep.empiler(po.getIpo());
+			}
 			break;
 		case 310: // fin decl procs
-			po.modifier(pileRep.depiler(), po.getIpo() + 1);
+
+			if(desc.getNbDef() > nbProc) {
+				UtilLex.messErr("Plus de procédures déclarées que de proc définies différent");
+			}
+			
+			if(desc.getUnite().equals("programme")) {
+				po.modifier(pileRep.depiler(), po.getIpo() + 1);
+			}
 			
 			for (int i = desc.getNbDef(); i > 0; i--) {
 				if(desc.getDefAdPo(i) == -1){
@@ -722,8 +746,8 @@ public class PtGen {
 				switch (tabSymb[paramIdent].categorie) {
 				case VARGLOBALE:
 					po.produire(EMPILERADG);
-					modifVecteurTrans(TRANSDON);
 					po.produire(tabSymb[paramIdent].info);
+					modifVecteurTrans(TRANSDON);
 					break;
 				case VARLOCALE:
 				case PARAMFIXE:
@@ -750,7 +774,11 @@ public class PtGen {
 			if(tabSymb[procIdent + 1].info == nbParamCompte){
 				po.produire(APPEL);
 				po.produire(tabSymb[procIdent].info);
-				modifVecteurTrans(TRANSCODE);
+				if(tabSymb[procIdent + 1].categorie == REF) {
+					modifVecteurTrans(REFEXT);
+				} else {
+					modifVecteurTrans(TRANSCODE);
+				}
 				po.produire(nbParamCompte);
 			} else {
 				UtilLex.messErr("Appel de procedure : Nombre de parametres incorrect");
