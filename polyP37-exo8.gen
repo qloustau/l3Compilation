@@ -1,7 +1,7 @@
 FICHIER polyP37-exo8.gen : 
 
    1  reserver        2
-   3  bincond       124
+   3  bincond       125
    5  reserver        1
    7  empiler         0
    9  affecterl       5   0
@@ -15,46 +15,46 @@ FICHIER polyP37-exo8.gen :
   27  affecterl       1   1
   30  empiler         1
   32  affecterg       1
-  34  bincond        58
+  34  bincond        59
   36  contenul        0   0
   39  empiler        -1
   41  eg        
-  42  bsifaux        58
+  42  bsifaux        59
   44  empiler         1
   46  affecterl       5   0
   49  empiler         1
   51  affecterl       1   1
-  54  empiler         0
-  56  affecterg       1
-  58  contenul        5   0
-  61  affecterl       2   1
-  64  retour          3
-  66  reserver        2
-  68  lirent    
-  69  affecterl       3   0
-  72  contenul        3   0
-  75  empileradl      0   1
-  78  empileradl      4   0
-  81  appel           5   3
-  84  contenul        4   0
-  87  non       
-  88  bsifaux       122
-  90  empileradl      0   1
-  93  appel          66   1
-  96  contenug        1
-  98  bsifaux       112
- 100  contenul        3   0
- 103  contenul        0   1
- 106  add       
- 107  affecterl       0   1
- 110  bincond       122
- 112  contenul        3   0
- 115  contenul        0   1
- 118  mul       
- 119  affecterl       0   1
- 122  retour          1
- 124  empileradg      0
- 126  appel          66   1
- 129  contenug        0
- 131  ecrent    
- 132  arret     
+  54  contenul        2   1
+  57  affecterg       1
+  59  contenul        5   0
+  62  affecterl       2   1
+  65  retour          3
+  67  reserver        2
+  69  lirent    
+  70  affecterl       3   0
+  73  contenul        3   0
+  76  empileradl      0   1
+  79  empileradl      4   0
+  82  appel           5   3
+  85  contenul        4   0
+  88  non       
+  89  bsifaux       123
+  91  empileradl      0   1
+  94  appel          67   1
+  97  contenug        1
+  99  bsifaux       113
+ 101  contenul        3   0
+ 104  contenul        0   1
+ 107  add       
+ 108  affecterl       0   1
+ 111  bincond       123
+ 113  contenul        3   0
+ 116  contenul        0   1
+ 119  mul       
+ 120  affecterl       0   1
+ 123  retour          1
+ 125  empileradg      0
+ 127  appel          67   1
+ 130  contenug        0
+ 132  ecrent    
+ 133  arret     
